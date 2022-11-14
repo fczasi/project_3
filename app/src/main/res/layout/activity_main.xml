@@ -24,9 +24,9 @@
         />
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="500dp"
         android:id="@+id/imgview"
-        android:layout_above="@+id/captureb"
+        android:layout_alignParentTop="true"
         />
 
     <RelativeLayout
@@ -34,7 +34,8 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         android:id="@+id/localizationdata"
-        android:layout_below="@+id/imgview">
+        android:layout_below="@+id/imgview"
+        android:layout_above="@+id/autor">
 
         <TextView
             android:layout_width="wrap_content"
