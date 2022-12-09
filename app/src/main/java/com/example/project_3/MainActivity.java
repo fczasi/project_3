@@ -20,8 +20,10 @@ import android.provider.MediaStore;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -38,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
     Button captb;
     ImageView imageView;
     RelativeLayout ldata;
-    TextView kraj, miasto, kordy, dlugosc, szerokosc, text3;
+    TextView kraj, miasto, dlugosc, szerokosc;
     FusedLocationProviderClient fusedLocationProviderClient;
+    Switch lokalizacja;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -52,14 +55,25 @@ public class MainActivity extends AppCompatActivity {
         ldata = findViewById(R.id.localizationdata);
         kraj = findViewById(R.id.kraj);
         miasto = findViewById(R.id.miasto);
-        kordy = findViewById(R.id.kordy);
         dlugosc = findViewById(R.id.dlugosc);
         szerokosc = findViewById(R.id.szerokosc);
-        text3 = findViewById(R.id.text3);
+        lokalizacja = findViewById(R.id.lokalizacja);
 
         captb.setEnabled(false);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+        lokalizacja.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked) {
+                    ldata.setVisibility(View.VISIBLE);
+                }else
+                {
+                    ldata.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
         captb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == 100){
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(bitmap);
-            ldata.setVisibility(View.VISIBLE);
             captb.setVisibility(View.GONE);
         }
     }

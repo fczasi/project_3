@@ -32,31 +32,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:id="@+id/localizationdata"
         android:layout_below="@+id/imgview"
         android:layout_above="@+id/autor">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/kordy"
-            android:text=""
-            android:layout_centerHorizontal="true"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/miasto"
-            android:text=""
-            android:layout_below="@+id/kordy"
+            android:text="test"
             android:layout_centerHorizontal="true"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/kraj"
-            android:text=""
+            android:text="test"
             android:layout_below="@+id/miasto"
             android:layout_centerHorizontal="true"
             />
@@ -64,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dlugosc"
-            android:text=""
+            android:text="test"
             android:layout_below="@+id/kraj"
             android:layout_centerHorizontal="true"
             />
@@ -72,16 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/szerokosc"
-            android:text=""
+            android:text="test"
             android:layout_below="@+id/dlugosc"
-            android:layout_centerHorizontal="true"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text3"
-            android:text=""
-            android:layout_below="@+id/szerokosc"
             android:layout_centerHorizontal="true"
             />
 
@@ -91,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgview"
+        android:id="@+id/lokalizacja"
         />
 
 </RelativeLayout>
